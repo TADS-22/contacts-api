@@ -18,7 +18,15 @@ const findAll = async (): Promise<IContact[]> => {
     return result
 }
 
+const findById = async (id: string): Promise<IContact | null> => {
+    const con = await db.connect()
+    const result = await Contact.findById(id)
+    con.disconnect()
+    return result
+}
+
 export default { 
     save,
     findAll,
+    findById,
 }
