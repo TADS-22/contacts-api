@@ -1,3 +1,4 @@
+import { StatusCodes } from 'http-status-codes'
 import { DefaultError } from "./default-error";
 
 export enum DatabaseErrorCodes {
@@ -8,6 +9,6 @@ export enum DatabaseErrorCodes {
 
 export class DatabaseError extends DefaultError {
     constructor(message: string, code: DatabaseErrorCodes) {
-        super(message, 500, code)
+        super(message, StatusCodes.INTERNAL_SERVER_ERROR, code)
     }
 }
