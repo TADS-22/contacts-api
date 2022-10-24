@@ -1,13 +1,13 @@
 import { NextFunction, Request, Response } from "express";
-import { DatabaseError } from "../errors/database-error";
+import { DefaultError } from "../../errors";
 
 const errorHandler = (error: Error, req: Request, res: Response, next: NextFunction) => {
     let code: string;
     let status: number;
 
-    if (error instanceof DatabaseError) {
-        status = 500
-        code = 'DB-ERROR'
+    if (error instanceof DefaultError) {
+        status = error.status
+        code = error.code
     } else {
         status = 500
         code = 'SERVER-ERROR'
