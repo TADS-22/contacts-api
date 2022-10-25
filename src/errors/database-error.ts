@@ -2,9 +2,9 @@ import { StatusCodes } from 'http-status-codes'
 import { DefaultError } from "./default-error";
 
 export enum DatabaseErrorCodes {
-    CONNECTION = 'DB-ERROR-000',
-    SAVE = 'DB-ERROR-001',
-    FIND = 'DB-ERROR-002',
+    CONNECTION = 'DB-CONNECTION-ERROR',
+    SAVE = 'DB-SAVE-ERROR',
+    FIND = 'DB-FIND-ERROR',
 }
 
 export class DatabaseError extends DefaultError {

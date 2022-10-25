@@ -5,7 +5,7 @@ import { Contact, IContact } from "../../entity";
 
 const save = async (data: IContact) => {
     try {
-        const con = await db.connect()
+    const con = await db.connect()
         const contact = new Contact(data)
         
         await contact.save()
