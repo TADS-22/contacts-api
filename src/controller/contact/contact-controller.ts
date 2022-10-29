@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { findAllContactsUseCase, registerContactUseCase } from "../../domain/use-case";
-import findContactUseCase from "../../domain/use-case/contact/find-contact-use-case";
+import {findContactUseCase} from "../../domain/use-case";
 
 const save = async (req: Request, res: Response) => {
     await registerContactUseCase.execute(req.body)
